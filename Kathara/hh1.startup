@@ -1,0 +1,2 @@
+ip a add 10.24.31.253/19 dev eth0
+ip r add default via 10.24.31.254

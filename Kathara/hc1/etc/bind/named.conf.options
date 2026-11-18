@@ -1,0 +1,9 @@
+// Comportamiento del servidor (punto 4f: dominios que no son de la empresa)
+options {
+    directory "/var/cache/bind";
+    recursion yes;                 // resuelve nombres de otros dominios
+    allow-query { any; };
+    allow-recursion { 127.0.0.1; 10.0.0.0/8; 172.16.0.0/12; 192.168.0.0/16; };  // solo para las redes del laboratorio
+    forwarders { 8.8.8.8; 8.8.4.4; };   // lo que no es de la zona se lo pregunta a estos
+    dnssec-validation no;
+};

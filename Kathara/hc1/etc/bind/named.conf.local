@@ -1,0 +1,5 @@
+// Zonas que administra HC1 (puntos 4b y 4d)
+zone "sinergia.izo" { type master; file "/etc/bind/db.sinergia.izo"; };
+zone "10.in-addr.arpa" { type master; file "/etc/bind/db.10"; };  // LA, LE y LH
+zone "24.172.in-addr.arpa" { type master; file "/etc/bind/db.172.24"; };  // LC y LD
+zone "168.192.in-addr.arpa" { type master; file "/etc/bind/db.192.168"; };  // los enlaces, LB, LF, LG y de LI a LV

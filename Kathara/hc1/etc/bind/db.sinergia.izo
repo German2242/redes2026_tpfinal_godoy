@@ -1,0 +1,132 @@
+; Zona directa sinergia.izo: nombre -> IP (puntos 4b y 4c)
+; Routers: un nombre por interfaz (rc0 = interfaz @0 de RC). Hosts: su nombre.
+
+$TTL 300
+@       IN  SOA  hc1.sinergia.izo. admin.sinergia.izo. (
+                 2026111701 ; serial: subilo cada vez que cambies la zona
+                 3600       ; refresh
+                 600        ; retry
+                 86400      ; expire
+                 300 )      ; TTL negativo
+        IN  NS   hc1.sinergia.izo.
+
+; ===== Routers =====
+; RA
+ra0     IN  A    10.17.255.254   ; LA
+ra1     IN  A    192.168.100.45  ; EA_K
+; RB
+rb0     IN  A    192.168.10.126  ; LB
+rb1     IN  A    192.168.100.53  ; EB_K
+; RC
+rc0     IN  A    172.24.1.254    ; LC
+rc1     IN  A    192.168.100.1   ; EC_D
+rc2     IN  A    192.168.100.13  ; EC_M
+rc3     IN  A    192.168.100.89  ; EC_I
+; RD
+rd0     IN  A    172.24.15.254   ; LD
+rd1     IN  A    192.168.100.2   ; EC_D
+rd2     IN  A    192.168.100.5   ; ED_N
+rd3     IN  A    192.168.100.17  ; ED_E
+; RE
+re0     IN  A    10.20.63.254    ; LE
+re1     IN  A    192.168.100.18  ; ED_E
+re2     IN  A    192.168.100.29  ; EE_I
+re3     IN  A    192.168.100.33  ; EE_J
+re4     IN  A    192.168.100.37  ; EE_O
+re5     IN  A    192.168.100.41  ; EE_R
+; RF
+rf0     IN  A    192.168.20.254  ; LF
+rf1     IN  A    192.168.100.65  ; EF_G
+; RG
+rg0     IN  A    192.168.21.254  ; LG
+rg1     IN  A    192.168.100.57  ; EG_S
+rg2     IN  A    192.168.100.66  ; EF_G
+rg3     IN  A    192.168.100.69  ; EG_H
+rg4     IN  A    192.168.100.81  ; EG_K
+; RH
+rh0     IN  A    10.24.31.254    ; LH
+rh1     IN  A    192.168.100.70  ; EG_H
+; RI
+ri0     IN  A    192.168.209.254 ; LI
+ri1     IN  A    192.168.100.30  ; EE_I
+ri2     IN  A    192.168.100.90  ; EC_I
+; RJ
+rj0     IN  A    192.168.210.254 ; LJ
+rj1     IN  A    192.168.100.34  ; EE_J
+; RK
+rk0     IN  A    192.168.211.254 ; LK
+rk1     IN  A    192.168.100.21  ; EK_M
+rk2     IN  A    192.168.100.46  ; EA_K
+rk3     IN  A    192.168.100.49  ; EK_PQ
+rk4     IN  A    192.168.100.54  ; EB_K
+rk5     IN  A    192.168.100.82  ; EG_K
+; RL
+rl0     IN  A    192.168.212.254 ; LL
+rl1     IN  A    192.168.100.73  ; EL_T
+; RM
+rm0     IN  A    192.168.213.254 ; LM
+rm1     IN  A    192.168.100.9   ; EM_N
+rm2     IN  A    192.168.100.14  ; EC_M
+rm3     IN  A    192.168.100.22  ; EK_M
+; RN
+rn0     IN  A    192.168.214.254 ; LN
+rn1     IN  A    192.168.100.6   ; ED_N
+rn2     IN  A    192.168.100.10  ; EM_N
+rn3     IN  A    192.168.100.25  ; EN_S
+; RO
+ro0     IN  A    192.168.215.254 ; LO
+ro1     IN  A    192.168.100.38  ; EE_O
+ro2     IN  A    192.168.100.85  ; EO_T
+; RPQ
+rpq0    IN  A    192.168.216.254 ; LP
+rpq1    IN  A    192.168.217.254 ; LQ
+rpq2    IN  A    192.168.100.50  ; EK_PQ
+; RR
+rr0     IN  A    192.168.218.254 ; LR
+rr1     IN  A    192.168.100.42  ; EE_R
+; RS
+rs0     IN  A    192.168.219.254 ; LS
+rs1     IN  A    192.168.100.26  ; EN_S
+rs2     IN  A    192.168.100.58  ; EG_S
+rs3     IN  A    192.168.100.61  ; ES_T
+; RT
+rt0     IN  A    192.168.220.254 ; LT
+rt1     IN  A    192.168.100.62  ; ES_T
+rt2     IN  A    192.168.100.74  ; EL_T
+rt3     IN  A    192.168.100.77  ; ET_UV
+rt4     IN  A    192.168.100.86  ; EO_T
+; RUV
+ruv0    IN  A    192.168.221.254 ; LU
+ruv1    IN  A    192.168.222.254 ; LV
+ruv2    IN  A    192.168.100.78  ; ET_UV
+
+; ===== Hosts =====
+ha1     IN  A    10.17.255.253   ; LA
+hb1     IN  A    192.168.10.125  ; LB
+hc1     IN  A    172.24.1.253    ; LC
+hd1     IN  A    172.24.15.253   ; LD
+he1     IN  A    10.20.63.253    ; LE
+hf1     IN  A    192.168.20.253  ; LF
+hg1     IN  A    192.168.21.253  ; LG
+hh1     IN  A    10.24.31.253    ; LH
+hi1     IN  A    192.168.209.253 ; LI
+hj1     IN  A    192.168.210.253 ; LJ
+hk1     IN  A    192.168.211.253 ; LK
+hl1     IN  A    192.168.212.253 ; LL
+hm1     IN  A    192.168.213.253 ; LM
+hn1     IN  A    192.168.214.253 ; LN
+ho1     IN  A    192.168.215.253 ; LO
+hp1     IN  A    192.168.216.253 ; LP
+hq1     IN  A    192.168.217.253 ; LQ
+hr1     IN  A    192.168.218.253 ; LR
+hs1     IN  A    192.168.219.253 ; LS
+ht1     IN  A    192.168.220.253 ; LT
+hu1     IN  A    192.168.221.253 ; LU
+hv1     IN  A    192.168.222.253 ; LV
+hv2     IN  A    192.168.222.252 ; LV
+
+; HV3, HV4 y HV5 toman la IP por DHCP (punto 7): no tienen registro fijo.
+; La interfaz @4 de RC (Internet) la asigna Docker: tampoco tiene registro fijo.
+
+; Punto 8: nombre del servidor web
+www     IN  CNAME hd1

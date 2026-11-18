@@ -1,0 +1,2 @@
+echo "nameserver 172.24.1.253" > /etc/resolv.conf
+echo "search sinergia.izo" >> /etc/resolv.conf

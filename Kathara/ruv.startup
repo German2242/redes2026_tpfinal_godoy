@@ -1,0 +1,11 @@
+ulimit -n 1024
+
+ip a add 192.168.221.254/24 dev eth0
+ip a add 192.168.222.254/24 dev eth1
+ip a add 192.168.100.78/30 dev eth2
+
+/etc/init.d/quagga start
+
+# Punto 7: instala el servidor DHCP sin pisar la configuración que ya copió Kathara (--force-confold)
+DEBIAN_FRONTEND=noninteractive dpkg -i --force-confdef --force-confold /debs/*.deb
+/etc/init.d/isc-dhcp-server restart

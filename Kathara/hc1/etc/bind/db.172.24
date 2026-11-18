@@ -1,0 +1,16 @@
+; Zona inversa 24.172.in-addr.arpa: IP -> nombre (punto 4d). Cubre LC y LD.
+; Cada registro es el resto de la IP al reves. Ej: 172.24.1.253 -> 253.1
+
+$TTL 300
+@       IN  SOA  hc1.sinergia.izo. admin.sinergia.izo. (
+                 2026111601 ; serial: subilo cada vez que cambies la zona
+                 3600       ; refresh
+                 600        ; retry
+                 86400      ; expire
+                 300 )      ; TTL negativo
+        IN  NS   hc1.sinergia.izo.
+
+253.1       IN  PTR  hc1.sinergia.izo.
+254.1       IN  PTR  rc0.sinergia.izo.
+253.15      IN  PTR  hd1.sinergia.izo.
+254.15      IN  PTR  rd0.sinergia.izo.

@@ -1,0 +1,2 @@
+ip a add 192.168.211.253/24 dev eth0
+ip r add default via 192.168.211.254

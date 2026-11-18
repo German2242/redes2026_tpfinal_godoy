@@ -1,0 +1,7 @@
+ip a add 172.24.15.253/21 dev eth0
+ip r add default via 172.24.15.254
+
+# Punto 8: Apache con CGI para el login
+a2enmod cgid
+chmod 755 /usr/lib/cgi-bin/login.py /usr/lib/cgi-bin/main.py
+systemctl start apache2

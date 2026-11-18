@@ -1,0 +1,10 @@
+ulimit -n 1024
+
+ip a add 192.168.211.254/24 dev eth0
+ip a add 192.168.100.21/30 dev eth1
+ip a add 192.168.100.46/30 dev eth2
+ip a add 192.168.100.49/30 dev eth3
+ip a add 192.168.100.54/30 dev eth4
+ip a add 192.168.100.82/30 dev eth5
+
+/etc/init.d/quagga start

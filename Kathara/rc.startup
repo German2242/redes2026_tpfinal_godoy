@@ -1,0 +1,14 @@
+ulimit -n 1024
+
+ip a add 172.24.1.254/23 dev eth0
+ip a add 192.168.100.1/30 dev eth1
+ip a add 192.168.100.13/30 dev eth2
+ip a add 192.168.100.89/30 dev eth3
+
+# Salida a Internet: NAT por eth4 (la interfaz bridged)
+iptables -t nat -A POSTROUTING -o eth4 -j MASQUERADE
+
+# Punto 8a: lo que llega de afuera al puerto 80 de RC se redirige al servidor web (HD1)
+iptables -t nat -A PREROUTING -i eth4 -p tcp --dport 80 -j DNAT --to-destination 172.24.15.253:80
+
+/etc/init.d/quagga start
